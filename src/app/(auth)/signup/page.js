@@ -1,4 +1,4 @@
-import AuthLayout from '@/component/Authlayout'
+import AuthLayout from '@/component/AuthLayout'
 import { FiUserPlus } from 'react-icons/fi'
 
 export default function SignupPage() {

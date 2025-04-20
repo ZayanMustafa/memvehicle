@@ -1,4 +1,4 @@
-import AuthLayout from '@/component/Authlayout'
+import AuthLayout from '@/component/AuthLayout.js'
 import { FiLogIn } from 'react-icons/fi'
 
 export default function LoginPage() {
@@ -45,7 +45,7 @@ export default function LoginPage() {
 
       <div className="mt-6 text-center">
         <p className="text-gray-400">
-          DON'T HAVE AN ACCOUNT?{' '}
+          DON&apos;T HAVE AN ACCOUNT?{' '}
           <a href="/auth/signup" className="underline hover:text-white">
             SIGN UP
           </a>

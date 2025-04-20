@@ -19,7 +19,7 @@ export default function NotFound() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Inspection Report Not Found</h2>
           
           <p className="text-2xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            The VIN or page you're searching for doesn't exist in our database.
+            The VIN or page you&apo;re searching for doesn&apos;t exist in our database.
           </p>
 
           {/* Help Options */}
