@@ -1,26 +1,31 @@
-
-
 'use client'
 import { useState, useEffect } from 'react'
-import { FiMenu, FiX, FiShield, FiFileText, FiHome, FiDollarSign } from 'react-icons/fi'
+import { FiMenu, FiX, FiShield, FiFileText, FiHome, FiDollarSign, FiUser } from 'react-icons/fi'
 import Link from 'next/link'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
+      setScrolled(window.scrollY > 10)
     }
+
+    // Check auth status
+    const user = localStorage.getItem('user')
+    setIsLoggedIn(!!user)
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem('user')
+    setIsLoggedIn(false)
+    window.location.href = '/login'
+  }
 
   const navLinks = [
     { name: 'Home', href: '/', icon: <FiHome /> },
@@ -53,18 +58,37 @@ const Navbar = () => {
 
           {/* Auth Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link 
-              href="/login" 
-              className="px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
-            >
-              Login
-            </Link>
-            <Link 
-              href="/signup" 
-              className="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
-            >
-              Register
-            </Link>
+            {isLoggedIn ? (
+              <>
+                <Link 
+                  href="/dashboard" 
+                  className="flex items-center px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
+                >
+                  <FiUser className="mr-2" /> Dashboard
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="px-6 py-2 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition-colors"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link 
+                  href="/login" 
+                  className="px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
+                >
+                  Login
+                </Link>
+                <Link 
+                  href="/signup" 
+                  className="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Register
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,20 +119,43 @@ const Navbar = () => {
               ))}
               
               <div className="pt-4 border-t border-gray-200">
-                <Link 
-                  href="/login" 
-                  className="block w-full text-center px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Login
-                </Link>
-                <Link 
-                  href="/signup" 
-                  className="block w-full text-center px-4 py-2 mt-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Register
-                </Link>
+                {isLoggedIn ? (
+                  <>
+                    <Link 
+                      href="/dashboard" 
+                      className="flex items-center justify-center px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <FiUser className="mr-2" /> Dashboard
+                    </Link>
+                    <button
+                      onClick={() => {
+                        handleLogout()
+                        setIsOpen(false)
+                      }}
+                      className="w-full px-4 py-2 mt-2 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition-colors"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link 
+                      href="/login" 
+                      className="block w-full text-center px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Login
+                    </Link>
+                    <Link 
+                      href="/signup" 
+                      className="block w-full text-center px-4 py-2 mt-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Register
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
