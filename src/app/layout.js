@@ -7,7 +7,7 @@ import Footer from '@/component/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'AutoInspect | Professional Vehicle Inspections',
+  title: 'MEM INSPECT',
   description: 'Get professional vehicle inspection reports with our certified inspectors',
 }
 
