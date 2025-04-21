@@ -34,7 +34,7 @@ export default function Consultation() {
                 <div>
                   <h3 className="text-2xl text-white mb-2">Report Walkthrough</h3>
                   <p className="text-gray-300">
-                    We'll explain each section of your inspection report in plain language and answer all your questions.
+                    We&apors;ll explain each section of your inspection report in plain language and answer all your questions.
                   </p>
                 </div>
               </div>
@@ -46,7 +46,7 @@ export default function Consultation() {
                 <div>
                   <h3 className="text-2xl text-white mb-2">Critical Findings</h3>
                   <p className="text-gray-300">
-                    We'll highlight any urgent issues that need attention and help you understand their implications.
+                    We&apors;ll highlight any urgent issues that need attention and help you understand their implications.
                   </p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function Consultation() {
           <div className="border border-white p-8">
             <h2 className="text-3xl font-bold text-white mb-6">REQUEST CONSULTATION</h2>
             <p className="text-gray-300 mb-8">
-              Complete the form below and we'll contact you to schedule your consultation session.
+              Complete the form below and we&apors;ll contact you to schedule your consultation session.
             </p>
 
             <form className="space-y-6">
