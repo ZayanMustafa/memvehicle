@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-3xl font-bold text-primary">AutoInspect</span>
+            <span className="text-3xl font-bold text-primary">MEM INSPECT</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -104,7 +104,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 py-4">
+          <div className="md:hidden bg-dark text-white shadow-lg rounded-lg mt-2 py-4">
             <div className="flex flex-col space-y-4 px-4">
               {navLinks.map((link) => (
                 <Link 

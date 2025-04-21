@@ -4,27 +4,27 @@ import { FaQuoteLeft, FaStar } from 'react-icons/fa';
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Bat man",
     role: "Car Buyer",
     content: "The inspection saved me from buying a car with hidden flood damage. The report was so detailed and helped me negotiate a better deal on another vehicle.",
     rating: 5,
-    image: "/user.jpg"
+    image: "/batman.jpg"
   },
   {
     id: 2,
-    name: "Michael Chen",
+    name: "Jan",
     role: "Used Car Dealer",
     content: "We use their services for all our inventory. The reports build trust with our customers and have increased our sales significantly.",
     rating: 5,
-    image: "/user.jpg"
+    image: "/jan.jpg"
   },
   {
     id: 3,
-    name: "David Wilson",
+    name: "Spider man",
     role: "Fleet Manager",
     content: "Their commercial vehicle inspections are thorough and reliable. We've been able to maintain our fleet better thanks to their detailed reports.",
     rating: 4,
-    image: "/user.jpg"
+    image: "/spiderman.jpg"
   }
 ];
 

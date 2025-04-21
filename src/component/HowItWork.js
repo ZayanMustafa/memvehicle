@@ -67,7 +67,7 @@ const HowItWorks = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <Link href="/start-inspection" 
+          <Link href="/schedule" 
              className="inline-block px-10 py-5 bg-white text-black text-xl font-bold hover:bg-black hover:text-white transition-colors border-2 border-white">
               START YOUR INSPECTION
           </Link>

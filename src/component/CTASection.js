@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 
 const CTASection = () => {
@@ -9,12 +10,16 @@ const CTASection = () => {
             Schedule your vehicle inspection today and get peace of mind with our comprehensive report.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="" >
             <button className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-lg transition-colors">
               Book Inspection Now
             </button>
+            </Link>
+            <Link href='/contact-us'>
             <button className="bg-transparent hover:bg-white/10 border-2 border-white text-white font-bold px-8 py-4 rounded-lg transition-colors">
               Contact Our Team
             </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -5,9 +5,9 @@ import HowItWorks from '@/component/HowItWork'
 import InspectionReports from '@/component/Inspectionreports'
 import Navbar from '@/component/Navbar'
 import Testimonials from '@/component/Testimonials'
-import HeroSection from '@/section/hero'
-import ServicesSection from '@/section/service'
-import StatsSection from '@/section/states'
+import HeroSection from '@/section/home/hero'
+import ServicesSection from '@/section/home/service'
+import StatsSection from '@/section/home/states'
 
 export default function Home() {
   return (

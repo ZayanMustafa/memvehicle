@@ -2,7 +2,7 @@ export const inspections = [
     {
       id: 1,
       title: "Full Comprehensive Inspection",
-      image: "/bike.jpg",
+      image: "/toyota.jpg",
       rating: "4.9",
       year: 2020,
       mileage: "45,230",
@@ -14,7 +14,7 @@ export const inspections = [
     {
       id: 2,
       title: "Basic Safety Inspection",
-      image: "/bike.jpg",
+      image: "/honda.jpg",
       rating: "4.7",
       year: 2018,
       mileage: "68,450",
@@ -26,7 +26,7 @@ export const inspections = [
     {
       id: 3,
       title: "Premium Detailed Inspection",
-      image: "/bike.jpg",
+      image: "/ford.jpg",
       rating: "5.0",
       year: 2021,
       mileage: "12,300",

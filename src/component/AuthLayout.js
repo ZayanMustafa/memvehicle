@@ -7,7 +7,7 @@ export default function AuthLayout({ children, title, subtitle }) {
       <header className="border-b border-white/20 py-6">
         <div className="container mx-auto px-4">
           <Link href="/" className="text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            AUTOINSPECT
+            MEM INSPECT
           </Link>
         </div>
       </header>
@@ -24,7 +24,7 @@ export default function AuthLayout({ children, title, subtitle }) {
       {/* Footer */}
       <footer className="border-t border-white/20 py-6 text-center text-gray-400">
         <div className="container mx-auto px-4">
-          © {new Date().getFullYear()} AutoInspect. All rights reserved.
+          © {new Date().getFullYear()} MEM INSPECT. All rights reserved.
         </div>
       </footer>
     </div>
