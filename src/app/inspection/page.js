@@ -1,4 +1,5 @@
 import { FiCheckCircle, FiAlertTriangle } from 'react-icons/fi'
+import { VscDebugBreakpointLog } from "react-icons/vsc";
 import Head from 'next/head'
 
 export default function Inspection() {
@@ -24,7 +25,7 @@ export default function Inspection() {
   return (
     <>
       <Head>
-        <title>Inspection Checklist | MEM Vehicle Inspection</title>
+        <title>Inspection Checklist | MEM INSPECTION </title>
       </Head>
 
       <section className="bg-dark-600 py-20">
