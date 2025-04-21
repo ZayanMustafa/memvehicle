@@ -1,35 +1,11 @@
+
+
 import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin, FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 import Link from 'next/link'
+import { footerLinks } from '@/constant/footer'
 
 const Footer = () => {
-  const footerLinks = [
-    {
-      title: "Services",
-      links: [
-        { name: "Pre-Purchase Inspection", href: "/pre-perchase" },
-        { name: "Annual Checkup", href: "/annual-checkup" },
-        { name: "Pre-Sale Inspection", href: "/pre-sale" },
-        { name: "Mobile Inspection", href: "/mobile-inspection" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { name: "About Us", href: "/aboutus" },
-        { name: "Our Inspectors", href: "/our-inspectors" },
-        { name: "Careers", href: "/careers" },
-        { name: "Contact", href: "/contact" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { name: "Privacy Policy", href: "/privacy-policy" },
-        { name: "Terms of Service", href: "/terms-of-service" },
-        { name: "Cookie Policy", href: "/cookie-policy" },
-      ],
-    },
-  ]
+ 
 
   return (
     <footer className="bg-dark text-white pt-16 pb-8">
@@ -43,7 +19,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {[FiFacebook, FiTwitter, FiInstagram, FiLinkedin].map((Icon, index) => (
-                <Link key={index} href="/" target='blank' className="text-gray-400 hover:text-white transition-colors">
+                <Link key={index} href="/instgram" target='blank' className="text-gray-400 hover:text-white transition-colors">
                   <Icon size={20} />
                 </Link>
               ))}

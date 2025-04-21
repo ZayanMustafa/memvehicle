@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { CalendarSection } from '@/section/schedule/calender';
 import { TimeSlotSection } from '@/section/schedule/timeslotsection';
 import { ScheduleConfirmation } from '@/section/schedule/scheduleconfirmation';
+import { SecondNavbar } from '@/component/SecondNav';
 
 export default function Schedule() {
   const currentDate = new Date();
@@ -141,7 +142,7 @@ export default function Schedule() {
         <title>Schedule Inspection | MEM INSPECTION</title>
       </Head>
       <ToastContainer position="top-right" />
-
+      <SecondNavbar/>
       <section className="bg-dark-600 py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">SCHEDULE YOUR INSPECTION</h1>

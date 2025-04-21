@@ -1,6 +1,7 @@
 import { FiCheckCircle, FiAlertTriangle } from 'react-icons/fi'
 import { VscDebugBreakpointLog } from "react-icons/vsc";
 import Head from 'next/head'
+import { SecondNavbar } from '@/component/SecondNav';
 
 export default function Inspection() {
   const categories = [
@@ -27,7 +28,7 @@ export default function Inspection() {
       <Head>
         <title>Inspection Checklist | MEM INSPECTION </title>
       </Head>
-
+      <SecondNavbar />
       <section className="bg-dark-600 py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">150-POINT INSPECTION CHECKLIST</h1>

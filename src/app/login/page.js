@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { FiLogIn } from 'react-icons/fi'
 import AuthLayout from '@/component/AuthLayout'
+import Link from 'next/link'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -71,7 +72,7 @@ export default function LoginPage() {
             <span className="text-sm">REMEMBER ME</span>
           </label>
           
-          <a href="/forgotpassword" className="text-sm underline text-white hover:text-gray-300">FORGOT PASSWORD?</a>
+          <Link href="/forgotpassword" className="text-sm underline text-white hover:text-gray-300">FORGOT PASSWORD?</Link>
         </div>
 
         <button 
@@ -85,9 +86,9 @@ export default function LoginPage() {
       <div className="mt-6 text-center">
         <p className="text-gray-400">
           DON&apos;T HAVE AN ACCOUNT?{' '}
-          <a href="/signup" className="underline hover:text-white">
+          <Link href="/signup" className="underline hover:text-white">
             SIGN UP
-          </a>
+          </Link>
         </p>
       </div>
     </AuthLayout>

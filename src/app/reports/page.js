@@ -1,4 +1,5 @@
 'use client'
+import { SecondNavbar } from '@/component/SecondNav';
 import { ReportHeader } from '@/section/report/reportheader';
 import { ReportPreview } from '@/section/report/reportpreview';
 import { ReportSection } from '@/section/report/reportsection';
@@ -9,32 +10,7 @@ export default function Reports() {
   const [openSection, setOpenSection] = useState(null);
   const [isViewing, setIsViewing] = useState(false);
 
-  const reportSections = [
-    {
-      title: "Vehicle Overview",
-      content: "Summary of overall condition with rating"
-    },
-    {
-      title: "Exterior Findings",
-      content: "Detailed photos and notes on body, paint, glass, etc."
-    },
-    {
-      title: "Interior Findings",
-      content: "Condition of seats, electronics, controls, and features"
-    },
-    {
-      title: "Mechanical Assessment",
-      content: "Engine, transmission, suspension, and brake evaluation"
-    },
-    {
-      title: "Test Drive Notes",
-      content: "Performance observations during road test"
-    },
-    {
-      title: "Recommendations",
-      content: "Suggested repairs and maintenance items"
-    }
-  ];
+ 
 
   const handleDownload = () => {
     // Simulate download
@@ -52,6 +28,7 @@ export default function Reports() {
 
   return (
     <>
+      <SecondNavbar/>
       <ReportHeader/>
       
       <section className="py-20 bg-dark-500">

@@ -1,6 +1,6 @@
 import Navbar from '@/component/Navbar'
 import Link from 'next/link'
-import { FiSearch, FiHome, FiPhone, FiFileText, FiAlertTriangle } from 'react-icons/fi'
+import {  FiHome, FiAlertTriangle } from 'react-icons/fi'
 
 export default function NotFound() {
   return (
@@ -22,23 +22,6 @@ export default function NotFound() {
 
           {/* Help Options */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <FiFileText className="text-primary mx-auto mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-3">New Inspection</h3>
-              <p className="text-gray-600 mb-4 text-xl">Schedule a fresh vehicle inspection</p>
-              <Link href="/services" className="text-primary font-semibold text-lg hover:underline">
-                Get Started →
-              </Link>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
-              <FiPhone className="text-primary mx-auto mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-3">Contact Support</h3>
-              <p className="text-gray-600 mb-4 text-xl">Our team is available 24/7</p>
-              <Link href="/contact" className="text-primary font-semibold text-lg hover:underline">
-                Call Now →
-              </Link>
-            </div>
 
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
               <FiHome className="text-primary mx-auto mb-4" size={48} />

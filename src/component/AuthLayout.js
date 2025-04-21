@@ -1,16 +1,11 @@
 import Link from 'next/link'
+import { SecondNavbar } from './SecondNav'
 
 export default function AuthLayout({ children, title, subtitle }) {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       {/* Header */}
-      <header className="border-b border-white/20 py-6">
-        <div className="container mx-auto px-4">
-          <Link href="/" className="text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            MEM INSPECT
-          </Link>
-        </div>
-      </header>
+      <SecondNavbar/>
 
       {/* Main Content */}
       <main className="flex-grow flex items-center justify-center py-12">

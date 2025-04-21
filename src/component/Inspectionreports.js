@@ -1,7 +1,7 @@
 
 
 
-import { inspections } from "@/constant/inspection"
+import { inspections } from "@/constant/inspection.js"
 import InspectionCard from "./InspectionCard"
 
 const InspectionReports = () => {

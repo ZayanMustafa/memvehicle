@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import AuthLayout from '@/component/AuthLayout'
 import { FiMail } from 'react-icons/fi'
+import Link from 'next/link'
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('')
@@ -15,7 +16,7 @@ export default function ForgotPasswordPage() {
     setIsLoading(true)
     
     try {
-      // Simulate API call
+
       await new Promise(resolve => setTimeout(resolve, 1000))
       
       // In a real app, you would call your backend here
@@ -71,12 +72,12 @@ export default function ForgotPasswordPage() {
       <div className="mt-6 text-center">
         <p className="text-gray-400">
           REMEMBER YOUR PASSWORD?{' '}
-          <a 
+          <Link 
             href="/login" 
             className="underline hover:text-white transition-colors"
           >
             LOGIN
-          </a>
+          </Link>
         </p>
       </div>
     </AuthLayout>

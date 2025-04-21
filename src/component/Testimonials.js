@@ -54,6 +54,7 @@ const Testimonials = () => {
               <div className="flex items-center space-x-4">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden">
                   <Image 
+                  sizes='25px'
                     src={testimonial.image} 
                     alt={testimonial.name}
                     fill
