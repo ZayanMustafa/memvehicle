@@ -1,6 +1,3 @@
-
-
-
 'use client'
 import { SecondNavbar } from '@/component/SecondNav';
 import { reportSections } from '@/constant/reportsection';
@@ -9,17 +6,20 @@ import { ReportPreview } from '@/section/report/reportpreview';
 import { ReportSection } from '@/section/report/reportsection';
 import { useState } from 'react';
 
-
 export default function Reports() {
   const [openSection, setOpenSection] = useState(null);
   const [isViewing, setIsViewing] = useState(false);
 
- 
-
   const handleDownload = () => {
-    // Simulate download
-    console.log("Downloading sample report...");
-    alert("Sample report download started!");
+
+    const link = document.createElement('a');
+    link.href = '/MemInspect.pdf'; 
+    link.download = 'MemInspect.pdf'; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    console.log("Report downloaded successfully");
   };
 
   const handleView = () => {
@@ -45,8 +45,20 @@ export default function Reports() {
           {isViewing && (
             <div className="mb-8 p-6 border border-white bg-gray-900">
               <h3 className="text-2xl text-white mb-4">Full Report Viewer</h3>
-              <div className="h-96 bg-gray-800 flex items-center justify-center">
-                <p className="text-gray-400">Interactive report viewer would appear here</p>
+              <div className="h-96 bg-gray-800">
+                <iframe 
+                  src="/report.pdf" 
+                  width="100%" 
+                  height="100%"
+                  className="border-0"
+                  title="Report Viewer"
+                >
+                  <p className="text-gray-400">Your browser does not support PDFs. 
+                    <a href="/report.pdf" className="text-blue-400 hover:underline">
+                      Download the report instead
+                    </a>
+                  </p>
+                </iframe>
               </div>
             </div>
           )}
@@ -68,3 +80,10 @@ export default function Reports() {
     </>
   );
 }
+
+
+
+
+
+
+
