@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +18,22 @@ const Navbar = () => {
     const user = localStorage.getItem('user')
     setIsLoggedIn(!!user)
 
+    // Check if mobile
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768) // 768px is typically md breakpoint
+    }
+
+    // Initial check
+    checkIfMobile()
+    
+    // Add event listeners
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', checkIfMobile)
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', checkIfMobile)
+    }
   }, [])
 
   const handleLogout = () => {
@@ -34,8 +49,11 @@ const Navbar = () => {
     { name: 'Pricing', href: '/pricing', icon: <FiDollarSign /> },
   ]
 
+  // Always show dark background on mobile, or when scrolled on desktop
+  const shouldShowDarkBg = isMobile || scrolled
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${shouldShowDarkBg ? 'bg-black shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -49,7 +67,7 @@ const Navbar = () => {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className="text-lg font-medium text-dark hover:text-primary transition-colors"
+                className="text-lg font-medium text-white hover:text-primary transition-colors"
               >
                 {link.name}
               </Link>
@@ -62,7 +80,7 @@ const Navbar = () => {
               <>
                 <Link 
                   href="/dashboard" 
-                  className="flex items-center px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
+                  className="flex items-center px-4 py-2 text-lg font-medium text-white hover:text-primary transition-colors"
                 >
                   <FiUser className="mr-2" /> Dashboard
                 </Link>
@@ -77,7 +95,7 @@ const Navbar = () => {
               <>
                 <Link 
                   href="/login" 
-                  className="px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
+                  className="px-4 py-2 text-lg font-medium text-white hover:text-primary transition-colors"
                 >
                   Login
                 </Link>
@@ -95,7 +113,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-dark focus:outline-none"
+              className="text-white focus:outline-none"
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
@@ -104,13 +122,13 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-dark text-white shadow-lg rounded-lg mt-2 py-4">
+          <div className="md:hidden bg-black text-white shadow-lg rounded-lg mt-2 py-4">
             <div className="flex flex-col space-y-4 px-4">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   href={link.href}
-                  className="flex items-center text-lg font-medium text-dark hover:text-primary transition-colors"
+                  className="flex items-center text-lg font-medium text-white hover:text-primary transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="mr-2">{link.icon}</span>
@@ -118,12 +136,12 @@ const Navbar = () => {
                 </Link>
               ))}
               
-              <div className="pt-4 border-t border-gray-200">
+              <div className="pt-4 border-t border-gray-700">
                 {isLoggedIn ? (
                   <>
                     <Link 
                       href="/dashboard" 
-                      className="flex items-center justify-center px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
+                      className="flex items-center justify-center px-4 py-2 text-lg font-medium text-white hover:text-primary transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       <FiUser className="mr-2" /> Dashboard
@@ -142,7 +160,7 @@ const Navbar = () => {
                   <>
                     <Link 
                       href="/login" 
-                      className="block w-full text-center px-4 py-2 text-lg font-medium text-dark hover:text-primary transition-colors"
+                      className="block w-full text-center px-4 py-2 text-lg font-medium text-white hover:text-primary transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       Login
