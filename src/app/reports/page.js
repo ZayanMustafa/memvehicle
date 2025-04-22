@@ -1,5 +1,7 @@
-'use client'
 
+
+
+'use client'
 import { SecondNavbar } from '@/component/SecondNav';
 import { reportSections } from '@/constant/reportsection';
 import { ReportHeader } from '@/section/report/reportheader';
