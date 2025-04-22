@@ -1,9 +1,3 @@
-
-
-
-'use client'
-import React from 'react'
-
 export const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="flex items-start">
     <div className="bg-white text-black rounded-full w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
@@ -14,4 +8,7 @@ export const FeatureCard = ({ icon: Icon, title, description }) => (
       <p className="text-gray-300">{description}</p>
     </div>
   </div>
-)
+);
+
+
+

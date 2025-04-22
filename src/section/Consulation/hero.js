@@ -1,10 +1,6 @@
 
 
 
-
-'use client'
-import React from 'react'
-
 export const ConsultationHero = ({ title, description }) => (
   <section className="bg-dark-600 py-20">
     <div className="container mx-auto px-4">
@@ -14,3 +10,5 @@ export const ConsultationHero = ({ title, description }) => (
     </div>
   </section>
 )
+
+

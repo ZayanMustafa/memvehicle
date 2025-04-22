@@ -1,9 +1,5 @@
 
 
-
-'use client'
-import React from 'react'
-
 export const EmergencyContact = ({ contacts = [] }) => (
   <section className="py-20 bg-dark-600">
     <div className="container mx-auto px-4 text-center">
@@ -21,4 +17,8 @@ export const EmergencyContact = ({ contacts = [] }) => (
       </div>
     </div>
   </section>
-)
+);
+
+
+
+

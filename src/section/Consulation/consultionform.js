@@ -1,8 +1,3 @@
-
-
-'use client'
-import React from 'react'
-
 export const ConsultationForm = ({ 
   fields = [], 
   contactMethods = [], 
@@ -18,7 +13,6 @@ export const ConsultationForm = ({
             type={field.type}
             className="w-full bg-transparent border border-white p-4 text-white placeholder-gray-400"
             placeholder={field.placeholder}
-            required
           />
         </div>
       ))}
@@ -28,13 +22,7 @@ export const ConsultationForm = ({
         <div className="flex flex-wrap gap-3">
           {contactMethods.map(method => (
             <label key={method} className="flex items-center">
-              <input 
-                type="radio" 
-                name="contactMethod" 
-                value={method}
-                className="mr-2" 
-                required
-              />
+              <input type="radio" name="contactMethod" className="mr-2" />
               <span className="text-gray-300">{method}</span>
             </label>
           ))}
@@ -49,4 +37,8 @@ export const ConsultationForm = ({
       </button>
     </form>
   </div>
-)
+);
+
+
+
+
