@@ -1,7 +1,5 @@
-import { SecondNavbar } from "@/component/SecondNav";
-import { ConsultationForm } from "@/section/Consultation/consultionform";
-import { FeatureCard } from "@/section/Consultation/featurecard";
-import { ConsultationHero } from "@/section/Consultation/hero";
+'use client'
+import Head from 'next/head'
 import { 
   FiPhone, 
   FiMail, 
@@ -9,6 +7,11 @@ import {
   FiAlertTriangle,
   FiDollarSign,
 } from 'react-icons/fi'
+import { SecondNavbar } from '@/component/SecondNav'
+import { ConsultationHero } from '@/section/Consulation/hero'
+import { FeatureCard } from '@/section/Consulation/featurecard'
+import { ConsultationForm } from '@/section/Consulation/consultionform'
+import { EmergencyContact } from '@/section/Consulation/emergencycontact'
 
 export default function Consultation() {
   const formFields = [
@@ -16,15 +19,15 @@ export default function Consultation() {
     { name: "email", label: "Email Address", type: "email", placeholder: "your@email.com" },
     { name: "phone", label: "Phone Number", type: "tel", placeholder: "(123) 456-7890" },
     { name: "reportId", label: "Inspection Report ID", type: "text", placeholder: "MEM-XXXX-XX-XX" }
-  ];
+  ]
 
-  const contactMethods = ["Phone Call", "Video Call", "Email"];
+  const contactMethods = ["Phone Call", "Video Call", "Email"]
 
   const features = [
     {
       icon: FiMessageSquare,
       title: "Report Walkthrough",
-      description: "We&apors;ll explain each section of your inspection report in plain language"
+      description: "We'll explain each section of your inspection report in plain language"
     },
     {
       icon: FiAlertTriangle,
@@ -36,12 +39,12 @@ export default function Consultation() {
       title: "Repair Estimates",
       description: "Get rough cost estimates for recommended repairs"
     }
-  ];
+  ]
 
   const emergencyContacts = [
     { icon: FiPhone, text: "CALL: (311) 25128 21", href: "tel:+9231125128721" },
     { icon: FiMail, text: "EMAIL: support@memvehicle.com", href: "mailto:support@memvehicle.com" }
-  ];
+  ]
 
   return (
     <>
@@ -70,7 +73,7 @@ export default function Consultation() {
             </div>
           </div>
 
-          <ConsultationForm
+          <ConsultationForm 
             fields={formFields}
             contactMethods={contactMethods}
           />
@@ -79,5 +82,8 @@ export default function Consultation() {
 
       <EmergencyContact contacts={emergencyContacts} />
     </>
-  );
+  )
 }
+
+
+
