@@ -1,6 +1,7 @@
-import Link from "next/link"
-import { SecondNavbar } from "./SecondNav"
 
+
+
+import Link from "next/link"
 
 const CTASection = () => {
     return (

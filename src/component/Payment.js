@@ -1,4 +1,87 @@
-// src/components/PaymentModal.js
+// 'use client';
+// import { FiX } from 'react-icons/fi';
+// import { useState, useRef } from 'react';
+// import { useWindowSize } from 'react-use';
+// import html2canvas from 'html2canvas';
+// import { jsPDF } from 'jspdf';
+// import { PaymentSuccess } from './Payment/PaymentSucess';
+// import { PaymentForm } from './Payment/PaymentForm';
+
+
+// export const PaymentModal = ({ selectedPlan, onClose }) => {
+//   const [paymentCompleted, setPaymentCompleted] = useState(false);
+//   const { width, height } = useWindowSize();
+//   const [showConfetti, setShowConfetti] = useState(false);
+//   const receiptRef = useRef(null);
+
+//   const handlePaymentSelect = (methodId) => {
+//     console.log('Selected payment method:', methodId);
+//   };
+
+//   const handleCompletePayment = () => {
+//     setPaymentCompleted(true);
+//     setShowConfetti(true);
+//     setTimeout(() => setShowConfetti(false), 5000);
+//   };
+
+//   const downloadReceipt = async () => {
+//     if (!receiptRef.current) return;
+    
+//     try {
+//       const canvas = await html2canvas(receiptRef.current, {
+//         scale: 2,
+//         logging: false,
+//         useCORS: true,
+//         allowTaint: true
+//       });
+      
+//       const imgData = canvas.toDataURL('image/png');
+//       const pdf = new jsPDF('p', 'mm', 'a4');
+//       const imgWidth = 190;
+//       const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      
+//       pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
+//       pdf.save(`receipt_${selectedPlan.name}_${new Date().toISOString().slice(0,10)}.pdf`);
+      
+//     } catch (error) {
+//       console.error('Error generating receipt:', error);
+//       alert('Failed to generate receipt. Please try again.');
+//     }
+//   };
+
+//   if (paymentCompleted) {
+//     return (
+//       <PaymentSuccess
+//         selectedPlan={selectedPlan}
+//         onClose={onClose}
+//         onDownload={downloadReceipt}
+//         width={width}
+//         height={height}
+//         showConfetti={showConfetti}
+//       />
+//     );
+//   }
+
+//   return (
+//     <div className="fixed inset-0 bg-dark-900 z-50 flex items-center justify-center p-4">
+//       <PaymentForm 
+//         selectedPlan={selectedPlan}
+//         onPaymentSelect={handlePaymentSelect}
+//         onCompletePayment={handleCompletePayment}
+//       />
+//       <button 
+//         onClick={onClose}
+//         className="absolute top-4 right-4 text-gray-300 hover:text-primary"
+//       >
+//         <FiX size={24} />
+//       </button>
+//     </div>
+//   );
+// };
+
+
+
+
 'use client';
 import { FiX, FiCheckCircle, FiDownload } from 'react-icons/fi';
 import { useState, useRef } from 'react';
@@ -203,8 +286,7 @@ export const PaymentModal = ({ selectedPlan, onClose }) => {
                 className="w-full mt-6 bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-lg transition-colors"
               >
                 Complete Payment
-              </button>
-              
+              </button>            
               <p className="text-gray-500 text-sm mt-4">
                 Your payment is secure and encrypted. By continuing, you agree to our Terms of Service.
               </p>
