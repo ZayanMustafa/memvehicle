@@ -1,9 +1,14 @@
 
 
 
+// import { SecondNavbar } from "@/component/SecondNav";
+// import { ConsultationForm } from "@/section/consulation/consultionform";
+// import { EmergencyContact } from "@/section/consulation/emergencycontact";
+// import { FeatureCard } from "@/section/consulation/featurecard";
+// import { ConsultationHero } from "@/section/consulation/hero";
 import { SecondNavbar } from "@/component/SecondNav";
 import { ConsultationForm } from "@/section/consulation/consultionform";
-import { EmergencyContact } from "@/section/consulation/emergencycontact.js";
+import { EmergencyContact } from "@/section/consulation/emergencycontact";
 import { FeatureCard } from "@/section/consulation/featurecard";
 import { ConsultationHero } from "@/section/consulation/hero";
 import Head from "next/head";
@@ -17,6 +22,7 @@ import {
 } from 'react-icons/fi'
 
 export default function Consultation() {
+
   const formFields = [
     { name: "name", label: "Full Name", type: "text", placeholder: "Your name" },
     { name: "email", label: "Email Address", type: "email", placeholder: "your@email.com" },
@@ -88,8 +94,6 @@ export default function Consultation() {
     </>
   );
 }
-
-
 
 
 
