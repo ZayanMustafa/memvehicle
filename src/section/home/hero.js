@@ -46,7 +46,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative bg-dark text-white pt-32 pb-20 md:pt-40 md:pb-28">
-      {/* Background Image */}
+        
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <Image 
           src="/bike.jpg"

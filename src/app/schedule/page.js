@@ -23,7 +23,7 @@ export default function Schedule() {
   const [vehicleInfo, setVehicleInfo] = useState('');
 
   const handleDateSelect = (date) => {
-    // Prevent selecting dates before current date
+
     if (
       displayMonth === currentMonth && 
       displayYear === currentYear && 
@@ -138,9 +138,6 @@ export default function Schedule() {
 
   return (
     <>
-      <Head>
-        <title>Schedule Inspection | MEM INSPECTION</title>
-      </Head>
       <ToastContainer position="top-right" />
       <SecondNavbar/>
       <section className="bg-dark-600 py-20">
