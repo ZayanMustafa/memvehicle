@@ -1,5 +1,5 @@
 
-
+'use client'
 
 import Image from 'next/image'
 import { FaCarSide } from "react-icons/fa";
@@ -7,6 +7,13 @@ import { FiCalendar } from "react-icons/fi";
 import { CiStar } from "react-icons/ci";
 
 const InspectionCard = ({ inspection }) => {
+  const handleViewReport = () => {
+ 
+    // Open the PDF in a new tab
+    window.open('/MemInspect.pdf', '_blank');   
+ 
+  };
+
   return (
     <div className="bg-primary-500 text-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-white">
       <div className="relative h-48">
@@ -15,6 +22,7 @@ const InspectionCard = ({ inspection }) => {
           alt={inspection.title}
           fill
           className="object-cover"
+          priority
         />
       </div>
       
@@ -41,7 +49,10 @@ const InspectionCard = ({ inspection }) => {
         
         <div className="flex justify-between items-center">
           <span className="text-2xl font-bold text-primary">${inspection.price}</span>
-          <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-colors">
+          <button 
+            onClick={handleViewReport}
+            className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-colors"
+          >
             View Report
           </button>
         </div>
@@ -51,3 +62,8 @@ const InspectionCard = ({ inspection }) => {
 }
 
 export default InspectionCard
+
+
+
+
+

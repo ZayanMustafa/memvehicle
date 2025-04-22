@@ -52,9 +52,6 @@ export default function Consultation() {
 
   return (
     <>
-      <Head>
-        <title>Expert Consultation | MEM Vehicle Inspection</title>
-      </Head>
       <SecondNavbar/>
       
       <ConsultationHero
