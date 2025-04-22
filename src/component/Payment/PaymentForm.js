@@ -16,7 +16,7 @@ export const PaymentForm = ({
     <div className="p-8">
       <h3 className="text-3xl font-bold text-white mb-2">Complete Your Booking</h3>
       <p className="text-gray-400 mb-6">
-        You're purchasing: <span className="text-white font-medium">{selectedPlan.name}</span>
+        You&apors;re purchasing: <span className="text-white font-medium">{selectedPlan.name}</span>
       </p>
       
       <div className="grid md:grid-cols-2 gap-8">

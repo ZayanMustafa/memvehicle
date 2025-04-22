@@ -90,6 +90,7 @@ import { useWindowSize } from 'react-use';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { paymentMethods } from '@/constant/paymentmethod';
+import Image from 'next/image';
 
 export const PaymentModal = ({ selectedPlan, onClose }) => {
   const [paymentCompleted, setPaymentCompleted] = useState(false);
@@ -234,7 +235,7 @@ export const PaymentModal = ({ selectedPlan, onClose }) => {
         
         <div className="p-8">
           <h3 className="text-3xl font-bold text-white mb-2">Complete Your Booking</h3>
-          <p className="text-gray-400 mb-6">You're purchasing: <span className="text-white font-medium">{selectedPlan.name}</span></p>
+          <p className="text-gray-400 mb-6">You&apors;re purchasing: <span className="text-white font-medium">{selectedPlan.name}</span></p>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
@@ -247,7 +248,7 @@ export const PaymentModal = ({ selectedPlan, onClose }) => {
                     onClick={() => handlePaymentSelect(method.id)}
                     className="w-full flex items-center justify-center gap-3 border border-gray-700 p-4 text-white hover:bg-dark-700 transition-colors rounded-lg"
                   >
-                    <img src={method.icon} alt={method.alt} className="h-6 brightness-0 invert" />
+                    <Image src={method.icon} alt={method.alt} className="h-6 brightness-0 invert" />
                     <span>{method.name}</span>
                   </button>
                 ))}
