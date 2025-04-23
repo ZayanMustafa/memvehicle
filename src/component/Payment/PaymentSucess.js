@@ -25,7 +25,7 @@ export const PaymentSuccess = ({
         gravity={0.2}
       />
     )}
-    <div className="bg-white-800 border-2 border-primary rounded-lg max-w-2xl w-full relative p-8 text-center">
+    <div className="bg-black border-2 border-primary rounded-lg max-w-2xl w-full relative p-8 text-center">
       <div className="mb-6 flex justify-center">
         <FiCheckCircle className="text-green-400 text-6xl" />
       </div>

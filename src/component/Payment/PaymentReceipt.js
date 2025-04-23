@@ -1,7 +1,6 @@
-
-
 'use client';
-import { forwardRef } from 'react';
+import { forwardRef, useRef } from 'react';
+import html2canvas from 'html2canvas';
 
 export const PaymentReceipt = forwardRef(({ selectedPlan }, ref) => (
   <div 
@@ -55,3 +54,37 @@ export const PaymentReceipt = forwardRef(({ selectedPlan }, ref) => (
 ));
 
 PaymentReceipt.displayName = 'PaymentReceipt';
+
+export const DownloadablePaymentReceipt = ({ selectedPlan }) => {
+  const receiptRef = useRef(null);
+
+  const downloadReceipt = async () => {
+    if (!receiptRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(receiptRef.current, {
+        backgroundColor: null,
+        scale: 2 // Higher quality
+      });
+      
+      const link = document.createElement('a');
+      link.download = `payment_receipt_${new Date().toISOString().slice(0, 10)}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } catch (error) {
+      console.error('Error generating receipt:', error);
+    }
+  };
+
+  return (
+    <div>
+      <PaymentReceipt ref={receiptRef} selectedPlan={selectedPlan} />
+      <button
+        onClick={downloadReceipt}
+        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Download Receipt
+      </button>
+    </div>
+  );
+};

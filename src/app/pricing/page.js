@@ -27,7 +27,8 @@ export default function PricingSection() {
               No hidden fees - our inspections come with clear deliverables
             </p>
           </div>
-
+          
+        {/* Planes */}
           <div className="grid md:grid-cols-3 gap-8">
             {paymentplans.map((plan, index) => (
               <div 
